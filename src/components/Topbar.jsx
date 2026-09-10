@@ -2,6 +2,17 @@ import { Link } from "react-router-dom";
 import { UserCircle, Waves } from "lucide-react";
 
 function Topbar() {
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <header className="topbar">
       <div className="topbar-brand">
@@ -15,8 +26,12 @@ function Topbar() {
 
       <nav className="topbar-nav">
         <Link to="/">Home</Link>
-        <a href="/#about">About</a>
-        <a href="/#how-it-works">How It Works</a>
+
+        <button onClick={() => scrollToSection("about")}>About</button>
+
+        <button onClick={() => scrollToSection("how-it-works")}>
+          How It Works
+        </button>
       </nav>
 
       <div className="topbar-actions">
