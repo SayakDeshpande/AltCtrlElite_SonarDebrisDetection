@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
 
 import Sidebar from "./components/Sidebar";
 import Topbar from "./components/Topbar";
@@ -8,11 +9,16 @@ import Analyze from "./pages/Analyze";
 import Results from "./pages/Results";
 import MapPage from "./pages/MapPage";
 import Reports from "./pages/Reports";
-import "./App.css";
 
 function App() {
+  const isGitHubPages = window.location.pathname.startsWith(
+    "/AltCtrlElite_SonarDebrisDetection",
+  );
+
   return (
-    <BrowserRouter>
+    <BrowserRouter
+      basename={isGitHubPages ? "/AltCtrlElite_SonarDebrisDetection" : "/"}
+    >
       <div className="app">
         <Sidebar />
 

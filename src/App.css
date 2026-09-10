@@ -158,33 +158,30 @@ button {
   font-size: 13px;
 }
 
-/* =========================================================
+/* =========================
    TOPBAR
-   ========================================================= */
+========================= */
 
 .topbar {
-  height: 70px;
-
-  padding: 0 28px;
+  height: 72px;
+  width: 100%;
+  background: #07151d;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  position: sticky;
-  top: 0;
-  z-index: 20;
-
-  background: #071a26;
-  border-bottom: 1px solid #1a3d4b;
+  padding: 0 30px;
+  box-sizing: border-box;
 }
 
 .topbar-brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 11px;
 
-  color: #38d9e6;
+  color: #4dd9ff;
 }
 
 .topbar-brand > div {
@@ -194,39 +191,40 @@ button {
 }
 
 .topbar-brand strong {
-  color: #edfaff;
+  color: #ffffff;
   font-size: 15px;
+  font-weight: 700;
 }
 
 .topbar-brand span {
-  color: #6f8f99;
-  font-size: 10px;
+  color: #8ba1ad;
+  font-size: 11px;
 }
 
 .topbar-nav {
   display: flex;
   align-items: center;
   gap: 30px;
-
-  margin-left: auto;
-  margin-right: 35px;
 }
 
 .topbar-nav a {
-  color: #829da6;
-  font-size: 13px;
+  color: #a9bac3;
+  text-decoration: none;
 
-  transition: 0.2s;
+  font-size: 14px;
+  font-weight: 500;
+
+  transition: color 0.2s ease;
 }
 
 .topbar-nav a:hover {
-  color: #38d9e6;
+  color: #4dd9ff;
 }
 
 .topbar-actions {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 20px;
 }
 
 .status {
@@ -234,42 +232,76 @@ button {
   align-items: center;
   gap: 8px;
 
-  color: #9ab4bc;
+  color: #9fb1ba;
   font-size: 12px;
 }
 
 .status-dot {
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
 
   border-radius: 50%;
+  background: #36d399;
 
-  background: #35d39a;
-
-  box-shadow: 0 0 8px rgba(53, 211, 154, 0.55);
+  box-shadow: 0 0 8px rgba(54, 211, 153, 0.6);
 }
 
 .profile-button {
   width: 38px;
   height: 38px;
 
+  border: none;
+  background: transparent;
+
+  color: #9fb1ba;
+
   display: flex;
   align-items: center;
   justify-content: center;
 
-  border: 1px solid #285461;
-  border-radius: 50%;
+  cursor: pointer;
 
-  background: #0c2937;
-  color: #75dfe6;
-
-  transition: 0.2s;
+  transition: color 0.2s ease;
 }
 
 .profile-button:hover {
-  border-color: #38d9e6;
-  background: #103844;
-  color: #38d9e6;
+  color: #4dd9ff;
+}
+
+/* =========================
+   TOPBAR RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .topbar {
+    padding: 0 20px;
+  }
+
+  .topbar-nav {
+    gap: 18px;
+  }
+
+  .status {
+    display: none;
+  }
+}
+
+@media (max-width: 650px) {
+  .topbar-brand span {
+    display: none;
+  }
+
+  .topbar-nav {
+    gap: 12px;
+  }
+
+  .topbar-nav a {
+    font-size: 12px;
+  }
+
+  .topbar-actions {
+    gap: 8px;
+  }
 }
 
 /* =========================================================

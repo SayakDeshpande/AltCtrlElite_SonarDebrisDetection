@@ -1,22 +1,22 @@
-import { UserCircle, Waves } from "lucide-react";
 import { Link } from "react-router-dom";
+import { UserCircle, Waves } from "lucide-react";
 
 function Topbar() {
   return (
     <header className="topbar">
-      <Link to="/" className="topbar-brand">
+      <div className="topbar-brand">
         <Waves size={21} />
 
         <div>
           <strong>AquaScan AI</strong>
           <span>Underwater Marine Intelligence</span>
         </div>
-      </Link>
+      </div>
 
       <nav className="topbar-nav">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#how-it-works">How It Works</a>
+        <Link to="/">Home</Link>
+        <a href="/#about">About</a>
+        <a href="/#how-it-works">How It Works</a>
       </nav>
 
       <div className="topbar-actions">
@@ -25,7 +25,7 @@ function Topbar() {
           System Ready
         </div>
 
-        <button className="profile-button" title="Profile">
+        <button className="profile-button" title="Profile" type="button">
           <UserCircle size={30} />
         </button>
       </div>
